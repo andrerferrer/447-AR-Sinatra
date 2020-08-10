@@ -1,0 +1,29 @@
+<%# Inside the icream is code %>
+<h1>Our Restaurants</h1>
+
+<ol>
+  <% @restaurants.each do |restaurant| %>
+    <a href="/restaurants/<%= restaurant.id %>">
+      <li>
+        <%= restaurant.name %>,
+        <%= restaurant.address %>
+      </li>
+    </a>
+  <% end %>
+</ol>
+
+
+<h2>Create a Restaurant</h2>
+
+<form action="/restaurants" method="post">
+  <label for="restaurant_name">Name</label>
+  <input type="text" name="restaurant_name">
+  <br>
+  <label for="restaurant_city">City</label>
+  <input type="text" name="restaurant_city">
+  <br>
+  <label for="restaurant_description">Description</label>
+  <input type="text" name="restaurant_description">
+  <br>
+  <input type="submit">
+</form>
